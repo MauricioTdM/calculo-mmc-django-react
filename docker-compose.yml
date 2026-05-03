@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: salutho-backend
+    ports:
+      - "48000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DEBUG=True
+
+  frontend:
+    build: ./frontend
+    container_name: salutho-frontend
+    ports:
+      - "45173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_BACKEND_BASE_URL=http://localhost:48000
+    depends_on:
+      - backend
