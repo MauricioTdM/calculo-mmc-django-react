@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4b&i@b7qmaq1rwnrl&(u!h=+$bxe0zb)q!_gjkye+y#c2&py6y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,4 +126,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:45173",
     "http://127.0.0.1:45173",
+    'https://calculo-mmc-django-react.vercel.app'
 ]
